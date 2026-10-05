@@ -37,12 +37,20 @@ const Franquicias: React.FC = () => {
         <div className="bg-blue-900 text-white rounded-2xl p-8 shadow-lg">
           <h2 className="text-2xl font-bold mb-4">¿Interesado en abrir tu centro CESAC AI?</h2>
           <p className="mb-6 opacity-90">Déjanos tus datos y nuestro equipo de expansión te contactará en menos de 24h.</p>
-          <Link 
-            to="/contacto"
-            className="inline-block bg-white text-blue-900 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors"
-          >
-            Solicitar Dossier Informativo
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link 
+              to="/contacto"
+              className="inline-block bg-white text-blue-900 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              Solicitar Dossier Informativo
+            </Link>
+            <a 
+              href="mailto:pergolessi9@gmail.com?subject=Consulta%20Franquicias%20CESAC%20AI"
+              className="inline-block border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-blue-900 transition-colors"
+            >
+              Contactar por Email
+            </a>
+          </div>
         </div>
       </div>
     </div>

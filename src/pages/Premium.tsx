@@ -303,7 +303,7 @@ export default function PremiumPage() {
           <Crown className="w-16 h-16 text-amber-400 mx-auto mb-6" />
           <h2 className="text-4xl font-bold mb-4">¿Listo para comenzar?</h2>
           <p className="text-xl text-blue-100 mb-8">Únete a miles de profesionales que ya están aprovechando las ventajas de CESAC AI Premium.</p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 mb-6">
             <Link to="/auth" className="px-8 py-4 bg-white text-cesac-900 font-bold rounded-xl hover:bg-blue-50 transition flex items-center gap-2">
               Comenzar prueba gratuita <ArrowRight className="w-5 h-5" />
             </Link>
@@ -311,7 +311,10 @@ export default function PremiumPage() {
               Contactar con ventas
             </Link>
           </div>
-          <p className="text-sm text-blue-200 mt-6">14 días de prueba gratuita · Sin compromiso · Cancela cuando quieras</p>
+          <p className="text-sm text-blue-200 mb-2">14 días de prueba gratuita · Sin compromiso · Cancela cuando quieras</p>
+          <p className="text-sm text-blue-200">
+            ¿Dudas? Escríbenos a: <a href="mailto:pergolessi9@gmail.com?subject=Consulta%20Premium%20CESAC%20AI" className="underline hover:text-white">pergolessi9@gmail.com</a>
+          </p>
         </div>
       </section>
     </div>

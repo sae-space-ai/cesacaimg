@@ -281,9 +281,20 @@ export default function ProductionPage() {
           <Calculator className="w-16 h-16 text-emerald-400 mx-auto mb-6" />
           <h2 className="text-4xl font-bold mb-4">¿Listo para calcular tu escenario?</h2>
           <p className="text-xl text-blue-100 mb-8">Contacta con nuestro equipo para obtener proyecciones personalizadas.</p>
-          <Link to="/contacto" className="px-8 py-4 bg-white text-cesac-900 font-bold rounded-xl hover:bg-blue-50 transition inline-flex items-center gap-2">
-            Contactar con un experto <ArrowRight className="w-5 h-5" />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+            <Link to="/contacto" className="px-8 py-4 bg-white text-cesac-900 font-bold rounded-xl hover:bg-blue-50 transition inline-flex items-center gap-2">
+              Contactar con un experto <ArrowRight className="w-5 h-5" />
+            </Link>
+            <a 
+              href="mailto:pergolessi9@gmail.com?subject=Consulta%20Análisis%20de%20Producción%20CESAC%20AI"
+              className="px-8 py-4 border-2 border-white text-white font-bold rounded-xl hover:bg-white hover:text-cesac-900 transition"
+            >
+              Enviar Email
+            </a>
+          </div>
+          <p className="text-sm text-blue-200">
+            También puedes escribirnos directamente a: <a href="mailto:pergolessi9@gmail.com" className="underline hover:text-white">pergolessi9@gmail.com</a>
+          </p>
         </div>
       </section>
     </div>

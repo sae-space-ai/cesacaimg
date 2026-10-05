@@ -365,6 +365,12 @@ export default function Layout() {
             <p className="text-sm text-gray-500">© 2025 CESAC AI. Todos los derechos reservados.</p>
             <p className="text-xs text-gray-600">Inteligencia Artificial · Educación · Empresa · Governance</p>
           </div>
+          <div className="border-t border-gray-800 mt-6 pt-6 text-center">
+            <p className="text-sm text-gray-400 mb-2">Contacto:</p>
+            <a href="mailto:pergolessi9@gmail.com" className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+              pergolessi9@gmail.com
+            </a>
+          </div>
           <div className="border-t border-gray-800 mt-6 pt-6 flex flex-wrap justify-center gap-3">
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900/30 border border-blue-700/50 rounded-full text-xs text-blue-300">
               <Shield className="w-3 h-3" />

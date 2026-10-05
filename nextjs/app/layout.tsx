@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { AppProvider } from './providers';
+import { AppProvider } from '@/lib/store';
+import Layout from '@/components/Layout';
 
 export const metadata: Metadata = {
   title: 'CESAC AI — Inteligencia Artificial · Educación · Empresa · Governance',
@@ -25,8 +26,7 @@ export default function RootLayout({
     <html lang="es">
       <body>
         <AppProvider>
-          <a href="#main-content" className="skip-link">Saltar al contenido principal</a>
-          {children}
+          <Layout>{children}</Layout>
         </AppProvider>
       </body>
     </html>

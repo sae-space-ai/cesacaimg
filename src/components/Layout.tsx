@@ -36,7 +36,8 @@ export default function Layout() {
       {/* Header */}
       <header className="bg-white shadow-sm border-b sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
+          {/* Row 1: Logo + Main Nav + Actions */}
+          <div className="flex items-center justify-between h-14">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 shrink-0">
               <div className="w-9 h-9 rounded-lg gradient-accent flex items-center justify-center">
@@ -48,9 +49,9 @@ export default function Layout() {
               </div>
             </Link>
 
-            {/* Desktop Nav */}
+            {/* Main Nav - Row 1 */}
             <nav className="hidden lg:flex items-center gap-1" aria-label="Navegación principal">
-              {navItems.slice(0, 8).map(item => {
+              {navItems.slice(0, 6).map(item => {
                 const isNew = ['Franquicias', 'Producción', 'Premium'].includes(item.label);
                 return (
                   <Link
@@ -71,63 +72,6 @@ export default function Layout() {
                   </Link>
                 );
               })}
-              <div className="relative group">
-                <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-cesac-700 hover:bg-gray-50 flex items-center gap-1">
-                  Más <ChevronDown className="w-3 h-3" />
-                </button>
-                <div className="absolute top-full right-0 mt-1 w-64 bg-white rounded-xl shadow-xl border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 overflow-hidden">
-                  {/* Sección: Formación Especializada */}
-                  <div className="px-4 py-2 bg-gray-50 border-b">
-                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Formación Especializada</p>
-                  </div>
-                  <Link to="/oposiciones" className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:bg-cesac-50 hover:text-cesac-700 transition">
-                    <Award className="w-4 h-4 text-blue-500" />
-                    <span>Oposiciones</span>
-                  </Link>
-                  <Link to="/educacion" className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:bg-cesac-50 hover:text-cesac-700 transition">
-                    <GraduationCap className="w-4 h-4 text-emerald-500" />
-                    <span>Educación</span>
-                  </Link>
-                  <Link to="/ia" className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:bg-cesac-50 hover:text-cesac-700 transition">
-                    <Cpu className="w-4 h-4 text-violet-500" />
-                    <span>Inteligencia Artificial</span>
-                  </Link>
-                  
-                  {/* Sección: Servicios */}
-                  <div className="px-4 py-2 bg-gray-50 border-y">
-                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Servicios</p>
-                  </div>
-                  <Link to="/lab" className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:bg-cesac-50 hover:text-cesac-700 transition">
-                    <FlaskConical className="w-4 h-4 text-indigo-500" />
-                    <span>AI Lab</span>
-                  </Link>
-                  <Link to="/campus" className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:bg-cesac-50 hover:text-cesac-700 transition">
-                    <BookOpen className="w-4 h-4 text-teal-500" />
-                    <span>Campus Virtual</span>
-                  </Link>
-                  <Link to="/consultoria" className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:bg-cesac-50 hover:text-cesac-700 transition">
-                    <Briefcase className="w-4 h-4 text-slate-500" />
-                    <span>Consultoría</span>
-                  </Link>
-                  <Link to="/procurement" className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:bg-cesac-50 hover:text-cesac-700 transition">
-                    <ClipboardList className="w-4 h-4 text-orange-500" />
-                    <span>Contratación Pública</span>
-                  </Link>
-                  
-                  {/* Sección: Información */}
-                  <div className="px-4 py-2 bg-gray-50 border-y">
-                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Información</p>
-                  </div>
-                  <Link to="/sobre" className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:bg-cesac-50 hover:text-cesac-700 transition">
-                    <Users className="w-4 h-4 text-gray-500" />
-                    <span>Sobre CESAC</span>
-                  </Link>
-                  <Link to="/contacto" className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:bg-cesac-50 hover:text-cesac-700 transition rounded-b-xl">
-                    <MessageSquare className="w-4 h-4 text-gray-500" />
-                    <span>Contacto</span>
-                  </Link>
-                </div>
-              </div>
             </nav>
 
             {/* Actions */}
@@ -222,6 +166,31 @@ export default function Layout() {
               </button>
             </div>
           </div>
+
+          {/* Row 2: Secondary Nav */}
+          <nav className="hidden lg:flex items-center gap-1 pb-2 border-t pt-2" aria-label="Navegación secundaria">
+            {navItems.slice(6).map(item => {
+              const isNew = ['Franquicias', 'Producción', 'Premium'].includes(item.label);
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`relative px-3 py-1.5 rounded-md text-xs font-medium transition ${
+                    location.pathname === item.path
+                      ? 'text-cesac-700 bg-cesac-50'
+                      : 'text-gray-600 hover:text-cesac-700 hover:bg-gray-50'
+                  }`}
+                >
+                  {item.label}
+                  {isNew && (
+                    <span className="absolute -top-1 -right-1 px-1.5 py-0.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[8px] font-bold rounded-full">
+                      NUEVO
+                    </span>
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
 
           {/* Search bar */}
           {searchOpen && (

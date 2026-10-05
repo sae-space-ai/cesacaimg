@@ -8,6 +8,9 @@ import Dashboard from './pages/Dashboard';
 import { Campus, AITutor } from './pages/Campus';
 import { AdminPanel } from './pages/Admin';
 import { About, Contact, UnitPage, Subscriptions, Cart, LegalPage } from './pages/Static';
+import FranchisePage from './pages/Franchise';
+import ProductionPage from './pages/Production';
+import PremiumPage from './pages/Premium';
 
 function App() {
   return (
@@ -37,6 +40,9 @@ function App() {
             <Route path="/ai-tutor" element={<AITutor />} />
             <Route path="/suscripciones" element={<Subscriptions />} />
             <Route path="/carrito" element={<Cart />} />
+            <Route path="/franquicias" element={<FranchisePage />} />
+            <Route path="/produccion" element={<ProductionPage />} />
+            <Route path="/premium" element={<PremiumPage />} />
             <Route path="/sobre" element={<About />} />
             <Route path="/contacto" element={<Contact />} />
             <Route path="/aviso-legal" element={<LegalPage type="aviso-legal" />} />

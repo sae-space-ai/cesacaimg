@@ -108,6 +108,7 @@ export function Contact() {
             </span>
           </div>
           <p className="text-lg text-gray-600">Estamos aquí para ayudarte. Escríbenos y te responderemos en menos de 24 horas.</p>
+          <p className="text-sm text-gray-500 mt-2">Cumplimiento Legislación UE - EN DESARROLLO | Producto MVP</p>
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 py-12">

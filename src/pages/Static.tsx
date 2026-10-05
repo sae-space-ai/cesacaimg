@@ -49,7 +49,7 @@ export function About() {
         </div>
 
         <h2 className="text-2xl font-bold text-cesac-900 mb-6">Ecosistema CESAC AI</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
           {businessUnits.map(unit => (
             <div key={unit.id} className="bg-white rounded-xl border p-5 hover:shadow-sm transition">
               <div className="text-3xl mb-3">{unit.icon}</div>
@@ -57,6 +57,38 @@ export function About() {
               <p className="text-sm text-gray-600">{unit.description}</p>
             </div>
           ))}
+        </div>
+
+        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border-2 border-blue-200 p-8">
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center shrink-0">
+              <Shield className="w-6 h-6 text-white" />
+            </div>
+            <div className="flex-1">
+              <h3 className="text-xl font-bold text-cesac-900 mb-3">Compromiso con el Cumplimiento Normativo</h3>
+              <p className="text-gray-700 mb-4">
+                En CESAC AI estamos comprometidos con el cumplimiento de la legislación europea en materia de inteligencia artificial y protección de datos. 
+                Nuestra plataforma se encuentra en <strong>fase activa de adaptación</strong> a los requisitos del <strong>EU AI Act</strong> y el <strong>RGPD</strong>.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+                  <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
+                  EU AI Act - En desarrollo
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-100 text-green-800 rounded-full text-xs font-medium">
+                  <CheckCircle className="w-3 h-3" />
+                  RGPD - Implementado
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-100 text-amber-800 rounded-full text-xs font-medium">
+                  <span className="w-2 h-2 bg-amber-600 rounded-full"></span>
+                  ISO 27001 - En preparación
+                </span>
+              </div>
+              <p className="text-sm text-gray-600 mt-4">
+                Para consultas sobre cumplimiento normativo, contacta con nuestro equipo: <a href="mailto:pergolessi9@gmail.com" className="text-cesac-700 font-medium hover:underline">pergolessi9@gmail.com</a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -116,7 +148,7 @@ export function Contact() {
             <h2 className="text-2xl font-bold text-cesac-900 mb-6">Información de contacto</h2>
             <div className="space-y-6">
               {[
-                { icon: <Mail className="w-5 h-5" />, label: 'Email', value: 'info@cesac.ai' },
+                { icon: <Mail className="w-5 h-5" />, label: 'Email', value: 'pergolessi9@gmail.com', link: 'mailto:pergolessi9@gmail.com' },
                 { icon: <Phone className="w-5 h-5" />, label: 'Teléfono', value: 'PENDIENTE DE VERIFICACIÓN' },
                 { icon: <MapPin className="w-5 h-5" />, label: 'Dirección', value: 'PENDIENTE DE VERIFICACIÓN' }
               ].map((item, i) => (
@@ -124,7 +156,11 @@ export function Contact() {
                   <div className="w-10 h-10 rounded-lg bg-cesac-50 flex items-center justify-center text-cesac-600 shrink-0">{item.icon}</div>
                   <div>
                     <p className="text-sm font-medium text-gray-700">{item.label}</p>
-                    <p className="text-sm text-gray-600">{item.value}</p>
+                    {item.link ? (
+                      <a href={item.link} className="text-sm text-cesac-700 hover:underline">{item.value}</a>
+                    ) : (
+                      <p className="text-sm text-gray-600">{item.value}</p>
+                    )}
                   </div>
                 </div>
               ))}

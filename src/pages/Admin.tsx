@@ -590,11 +590,10 @@ function AdminSettings() {
               <label className="block text-sm font-medium text-gray-700 mb-1">URL del sitio</label>
               <input type="text" defaultValue="https://cesac.ai" className="w-full px-3 py-2 border rounded-lg text-sm" />
             </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Email de contacto</label>
-              <input type="email" defaultValue="info@cesac.ai" className="w-full px-3 py-2 border rounded-lg text-sm" />
-            </div>
-            <div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Email de contacto</label>
+            <input type="email" defaultValue="pergolessi9@gmail.com" className="w-full px-3 py-2 border rounded-lg text-sm" />
+          </div>            <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Zona horaria</label>
               <select className="w-full px-3 py-2 border rounded-lg text-sm">
                 <option>Europe/Madrid (UTC+1)</option>

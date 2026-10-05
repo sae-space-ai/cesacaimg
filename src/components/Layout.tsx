@@ -365,6 +365,16 @@ export default function Layout() {
             <p className="text-sm text-gray-500">© 2025 CESAC AI. Todos los derechos reservados.</p>
             <p className="text-xs text-gray-600">Inteligencia Artificial · Educación · Empresa · Governance</p>
           </div>
+          <div className="border-t border-gray-800 mt-6 pt-6 flex flex-wrap justify-center gap-3">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-900/30 border border-blue-700/50 rounded-full text-xs text-blue-300">
+              <Shield className="w-3 h-3" />
+              Cumplimiento Legislación UE - EN DESARROLLO
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-900/30 border border-amber-700/50 rounded-full text-xs text-amber-300">
+              <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></span>
+              Producto MVP (Minimum Viable Product)
+            </span>
+          </div>
         </div>
       </footer>
     </div>

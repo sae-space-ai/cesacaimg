@@ -100,7 +100,13 @@ export function Contact() {
     <div className="animate-fade-in">
       <div className="bg-cesac-50 py-16 border-b">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-bold text-cesac-900 mb-4">Contacto</h1>
+          <div className="flex items-center gap-3 mb-4">
+            <h1 className="text-4xl font-bold text-cesac-900">Contacto</h1>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-100 border border-amber-300 rounded-full text-xs font-medium text-amber-800">
+              <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></span>
+              Producto MVP
+            </span>
+          </div>
           <p className="text-lg text-gray-600">Estamos aquí para ayudarte. Escríbenos y te responderemos en menos de 24 horas.</p>
         </div>
       </div>
@@ -171,6 +177,21 @@ export function Contact() {
               <Link to="/empresas" className="text-sm text-cesac-700 font-medium hover:underline flex items-center gap-1">
                 Conocer soluciones B2B <ArrowRight className="w-3 h-3" />
               </Link>
+            </div>
+            
+            {/* Aviso Legal UE */}
+            <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+              <div className="flex items-start gap-3">
+                <Shield className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <p className="text-xs font-semibold text-blue-900 mb-1">Cumplimiento Normativo</p>
+                  <p className="text-xs text-blue-700 leading-relaxed">
+                    Esta plataforma se encuentra en fase activa de adaptación a los requisitos del 
+                    <strong> EU AI Act</strong> y el <strong>RGPD</strong>. 
+                    Para consultas sobre cumplimiento normativo: <a href="mailto:pergolessi9@gmail.com" className="underline hover:text-blue-900">pergolessi9@gmail.com</a>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

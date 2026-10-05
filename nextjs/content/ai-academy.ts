@@ -4,209 +4,320 @@ import type { CourseContent } from '../content-types';
 
 export const aiAcademyContent: CourseContent[] = [
   {
-    productId: 'p16', productSlug: 'ai-literacy', productName: 'AI Literacy',
-    introduction: 'Curso fundamental para comprender la IA sin conocimientos técnicos previos. Cubre fundamentos, aplicaciones, limitaciones, ética y marco regulatorio EU AI Act.',
-    methodology: 'Aprendizaje práctico con casos reales, ejercicios interactivos y discusión de implicaciones éticas.',
-    evaluationSystem: 'Tests de comprensión, caso práctico final y proyecto de aplicación en tu sector.',
+    productId: 'p16', productSlug: 'fundamentos-ia-generativa', productName: 'Fundamentos de IA Generativa para Profesionales',
+    introduction: 'Curso introductorio diseñado para desmitificar la Inteligencia Artificial Generativa. Los participantes comprenderán cómo funcionan los LLMs, sus limitaciones actuales y cómo integrarlos éticamente en su flujo de trabajo diario sin necesidad de conocimientos técnicos avanzados.',
+    methodology: '70% práctica guiada, 20% teoría aplicada, 10% reflexión. Sesiones sincrónicas semanales de 2h.',
+    evaluationSystem: 'Test de conceptos fundamentales (30%). Informe de análisis de riesgo de una herramienta IA (70%).',
     certification: 'Certificado CESAC AI Academy (30 horas).',
     modules: [
-      { id: 'm01', title: 'Fundamentos de IA', description: 'Qué es la IA, historia, tipos de sistemas, cómo funciona.', duration: '8 horas',
+      { id: 'm01', title: 'Historia y Evolución', description: 'De Turing a la Era Generativa. Hitos fundamentales y evolución tecnológica.', duration: '6 horas',
         lessons: [
-          { id: 'l01', title: '¿Qué es la Inteligencia Artificial?', description: 'Definiciones, historia, tipos de IA: débil vs fuerte, estrecha vs general.', duration: '3 horas', type: 'theory',
-            resources: [{ id: 'r01', type: 'video', title: 'Historia de la IA', duration: '45 min', downloadable: false }, { id: 'r02', type: 'pdf', title: 'Glosario de IA', pages: 15, downloadable: true }],
-            objectives: ['Definir IA correctamente', 'Diferenciar tipos de IA', 'Conocer hitos históricos'],
-            keyPoints: ['Test de Turing', 'Machine Learning', 'Deep Learning', 'IA generativa']
+          { id: 'l01', title: 'De Turing a ChatGPT', description: 'Recorrido histórico desde los primeros modelos hasta la revolución generativa.', duration: '3 horas', type: 'theory',
+            resources: [{ id: 'r01', type: 'video', title: 'Historia de la IA', duration: '45 min', downloadable: false }, { id: 'r02', type: 'pdf', title: 'Timeline de la IA', pages: 10, downloadable: true }],
+            objectives: ['Contextualizar la IA generativa', 'Identificar hitos clave', 'Comprender la evolución tecnológica'],
+            keyPoints: ['Test de Turing', 'Redes neuronales', 'Deep Learning', 'Transformers']
           }
         ]
       },
-      { id: 'm02', title: 'Machine Learning y Deep Learning', description: 'Cómo aprenden las máquinas: algoritmos, redes neuronales, entrenamiento.', duration: '8 horas',
+      { id: 'm02', title: 'Cómo piensan las máquinas', description: 'Tokens, embeddings y probabilidad. Arquitectura básica de los LLMs.', duration: '8 horas',
         lessons: [
-          { id: 'l02', title: 'Algoritmos de aprendizaje', description: 'Supervisado, no supervisado, por refuerzo. Redes neuronales básicas.', duration: '4 horas', type: 'theory',
-            resources: [{ id: 'r03', type: 'video', title: 'ML explicado sin matemáticas', duration: '60 min', downloadable: false }],
-            objectives: ['Comprender ML básico', 'Diferenciar tipos de aprendizaje', 'Entender redes neuronales'],
-            keyPoints: ['Datos de entrenamiento', 'Modelos predictivos', 'Redes neuronales']
+          { id: 'l02', title: 'Arquitectura de Transformers', description: 'Funcionamiento interno de los modelos de lenguaje. Tokens, embeddings y atención.', duration: '4 horas', type: 'theory',
+            resources: [{ id: 'r03', type: 'video', title: 'Transformers explicados', duration: '60 min', downloadable: false }],
+            objectives: ['Comprender la arquitectura Transformer', 'Entender el concepto de tokens', 'Analizar el mecanismo de atención'],
+            keyPoints: ['Tokens', 'Embeddings', 'Self-attention', 'Probabilidad']
           }
         ]
       },
-      { id: 'm03', title: 'IA Generativa', description: 'ChatGPT, Claude, Gemini, DALL-E, Midjourney. Cómo funcionan y aplicaciones.', duration: '8 horas',
+      { id: 'm03', title: 'El ecosistema 2026', description: 'Modelos propietarios vs. Open Source. Panorama actual de la IA generativa.', duration: '6 horas',
         lessons: [
-          { id: 'l03', title: 'Modelos de lenguaje', description: 'Transformers, tokens, contexto, generación de texto.', duration: '4 horas', type: 'theory',
-            resources: [{ id: 'r04', type: 'video', title: 'Cómo funciona ChatGPT', duration: '50 min', downloadable: false }],
-            objectives: ['Entender LLMs', 'Conocer limitaciones', 'Identificar aplicaciones'],
-            keyPoints: ['Transformers', 'Tokens', 'Contexto', 'Alucinaciones']
+          { id: 'l03', title: 'Modelos y proveedores', description: 'GPT-4, Claude, Gemini, Llama, Mistral. Comparativa y casos de uso.', duration: '3 horas', type: 'theory',
+            resources: [{ id: 'r04', type: 'pdf', title: 'Comparativa de modelos 2026', pages: 15, downloadable: true }],
+            objectives: ['Diferenciar modelos propietarios y open source', 'Identificar fortalezas de cada modelo', 'Seleccionar herramientas según caso de uso'],
+            keyPoints: ['Modelos propietarios', 'Open Source', 'Casos de uso', 'Selección de herramientas']
           }
         ]
       },
-      { id: 'm04', title: 'Ética y EU AI Act', description: 'Sesgos, privacidad, transparencia, marco regulatorio europeo.', duration: '6 horas',
+      { id: 'm04', title: 'Ética y Seguridad', description: 'Deepfakes, propiedad intelectual y GDPR. Uso responsable de la IA.', duration: '6 horas',
         lessons: [
-          { id: 'l04', title: 'Regulación europea de IA', description: 'EU AI Act: clasificación de riesgos, obligaciones, timeline.', duration: '3 horas', type: 'theory',
-            resources: [{ id: 'r05', type: 'pdf', title: 'Resumen EU AI Act', pages: 20, downloadable: true }],
-            objectives: ['Conocer el EU AI Act', 'Clasificar sistemas por riesgo', 'Entender obligaciones'],
-            keyPoints: ['Riesgo inaceptable', 'Riesgo alto', 'Transparencia', 'Supervisión humana']
+          { id: 'l04', title: 'Riesgos éticos y legales', description: 'Deepfakes, sesgos, privacidad y marco regulatorio. Principios de uso responsable.', duration: '3 horas', type: 'theory',
+            resources: [{ id: 'r05', type: 'pdf', title: 'Guía de ética en IA', pages: 20, downloadable: true }],
+            objectives: ['Identificar riesgos éticos', 'Aplicar principios de privacidad', 'Cumplir con GDPR en uso de IA'],
+            keyPoints: ['Deepfakes', 'Propiedad intelectual', 'GDPR', 'Sesgos algorítmicos']
+          }
+        ]
+      },
+      { id: 'm05', title: 'Taller práctico', description: 'Primeros pasos con asistentes conversacionales. Aplicación real en flujo de trabajo.', duration: '4 horas',
+        lessons: [
+          { id: 'l05', title: 'Hands-on con LLMs', description: 'Práctica guiada con ChatGPT, Claude y otros asistentes. Casos de uso reales.', duration: '4 horas', type: 'practice',
+            resources: [{ id: 'r06', type: 'exercise', title: 'Ejercicios prácticos', downloadable: true }],
+            objectives: ['Usar asistentes conversacionales', 'Aplicar IA en tareas reales', 'Evaluar resultados críticamente'],
+            keyPoints: ['Prompting básico', 'Evaluación de resultados', 'Integración en workflow']
           }
         ]
       }
     ],
-    additionalResources: [{ id: 'ar01', type: 'download', title: 'Guía de herramientas IA', downloadable: true }],
-    bibliography: ['EU AI Act', 'Libro blanco de IA de la Comisión Europea']
+    additionalResources: [{ id: 'ar01', type: 'download', title: 'Guía de herramientas IA 2026', downloadable: true }],
+    bibliography: ['EU AI Act', 'Libro blanco de IA de la Comisión Europea', 'Guidelines for AI Ethics']
   },
   {
-    productId: 'p17', productSlug: 'ia-generativa', productName: 'Introducción Práctica a IA Generativa',
-    introduction: 'Formación práctica e intensiva en las principales herramientas de IA generativa: chatbots, imágenes, audio, vídeo y código.',
-    methodology: '100% práctico con ejercicios reales del entorno profesional.',
-    evaluationSystem: 'Proyecto final: workflow automatizado con múltiples herramientas de IA.',
+    productId: 'p17', productSlug: 'prompt-engineering-avanzado', productName: 'Prompt Engineering Avanzado y Diseño de Instrucciones',
+    introduction: 'Domina el arte de comunicarte con la IA. Este curso va más allá de preguntas simples, enseñando técnicas estructuradas como Chain-of-Thought, Few-Shot Learning y diseño de sistemas de prompts modulares para obtener resultados consistentes y profesionales.',
+    methodology: 'Laboratorios de prompting en vivo. Uso de herramientas de evaluación automática de prompts.',
+    evaluationSystem: 'Entrega de librería de prompts (50%). Proyecto de optimización de un flujo de trabajo real (50%).',
     certification: 'Certificado CESAC AI Academy (45 horas).',
     modules: [
-      { id: 'm01', title: 'Chatbots: ChatGPT y Claude', description: 'Uso avanzado de asistentes conversacionales.', duration: '12 horas',
+      { id: 'm01', title: 'Fundamentos del Prompting', description: 'Contexto, instrucción y formato. Anatomía de un prompt efectivo.', duration: '8 horas',
         lessons: [
-          { id: 'l01', title: 'ChatGPT en profundidad', description: 'Funciones avanzadas, GPTs personalizados, análisis de datos.', duration: '6 horas', type: 'practice',
-            resources: [{ id: 'r01', type: 'video', title: 'ChatGPT avanzado', duration: '90 min', downloadable: false }],
-            objectives: ['Dominar ChatGPT', 'Crear GPTs personalizados', 'Analizar datos'],
-            keyPoints: ['Prompts avanzados', 'GPTs personalizados', 'Análisis de datos']
-          }
-        ]
-      },
-      { id: 'm02', title: 'Generación de Imágenes', description: 'DALL-E, Midjourney, Stable Diffusion.', duration: '10 horas',
-        lessons: [
-          { id: 'l02', title: 'Diseño con IA', description: 'Prompts para imágenes, estilos, iteración.', duration: '5 horas', type: 'practice',
-            resources: [{ id: 'r02', type: 'exercise', title: 'Ejercicios de diseño', downloadable: true }],
-            objectives: ['Generar imágenes con IA', 'Dominar prompts visuales', 'Iterar diseños'],
-            keyPoints: ['Prompts visuales', 'Estilos artísticos', 'Iteración']
-          }
-        ]
-      },
-      { id: 'm03', title: 'IA para Audio y Vídeo', description: 'Whisper, ElevenLabs, herramientas de vídeo con IA.', duration: '10 horas',
-        lessons: [
-          { id: 'l03', title: 'Audio y vídeo con IA', description: 'Transcripción, generación de voz, edición de vídeo.', duration: '5 horas', type: 'practice',
-            resources: [{ id: 'r03', type: 'video', title: 'Herramientas de audio/vídeo', duration: '75 min', downloadable: false }],
-            objectives: ['Transcribir audio', 'Generar voz', 'Editar vídeo con IA'],
-            keyPoints: ['Transcripción', 'Text-to-speech', 'Edición automática']
-          }
-        ]
-      },
-      { id: 'm04', title: 'Asistentes de Código', description: 'GitHub Copilot, Cursor, Codeium.', duration: '8 horas',
-        lessons: [
-          { id: 'l04', title: 'Programación con IA', description: 'Autocompletado, generación de código, debugging.', duration: '4 horas', type: 'practice',
-            resources: [{ id: 'r04', type: 'exercise', title: 'Ejercicios de código', downloadable: true }],
-            objectives: ['Usar asistentes de código', 'Generar código con IA', 'Depurar con IA'],
-            keyPoints: ['Autocompletado', 'Generación de funciones', 'Refactoring']
-          }
-        ]
-      }
-    ],
-    additionalResources: [{ id: 'ar01', type: 'download', title: 'Biblioteca de prompts', downloadable: true }],
-    bibliography: []
-  },
-  {
-    productId: 'p18', productSlug: 'prompt-engineering', productName: 'Prompt Engineering',
-    introduction: 'Curso especializado en creación de prompts efectivos para obtener resultados óptimos de modelos de IA generativa.',
-    methodology: 'Práctica intensiva con casos reales, análisis de resultados y optimización iterativa.',
-    evaluationSystem: 'Biblioteca personal de 20+ prompts profesionales validados.',
-    certification: 'Certificado CESAC AI Academy (40 horas).',
-    modules: [
-      { id: 'm01', title: 'Fundamentos del Prompting', description: 'Principios básicos, estructura de prompts, elementos clave.', duration: '8 horas',
-        lessons: [
-          { id: 'l01', title: 'Anatomía de un prompt', description: 'Contexto, instrucción, formato, ejemplos, restricciones.', duration: '4 horas', type: 'theory',
+          { id: 'l01', title: 'Anatomía de un prompt', description: 'Estructura básica: contexto, instrucción, formato, ejemplos y restricciones.', duration: '4 horas', type: 'theory',
             resources: [{ id: 'r01', type: 'pdf', title: 'Guía de prompting', pages: 25, downloadable: true }],
-            objectives: ['Estructurar prompts', 'Incluir elementos clave', 'Evitar ambigüedades'],
+            objectives: ['Estructurar prompts efectivos', 'Incluir elementos clave', 'Evitar ambigüedades'],
             keyPoints: ['Contexto', 'Instrucción clara', 'Formato de salida', 'Ejemplos']
           }
         ]
       },
-      { id: 'm02', title: 'Técnicas Avanzadas', description: 'Chain-of-thought, few-shot, role prompting, self-consistency.', duration: '12 horas',
+      { id: 'm02', title: 'Técnicas Intermedias', description: 'Zero-shot vs. Few-shot learning. Cuándo y cómo usar cada técnica.', duration: '8 horas',
         lessons: [
-          { id: 'l02', title: 'Chain-of-thought', description: 'Pensamiento paso a paso para problemas complejos.', duration: '4 horas', type: 'workshop',
-            resources: [{ id: 'r02', type: 'exercise', title: 'Ejercicios CoT', downloadable: true }],
-            objectives: ['Aplicar CoT', 'Resolver problemas complejos', 'Mejorar razonamiento'],
-            keyPoints: ['Pensamiento paso a paso', 'Descomposición', 'Verificación']
+          { id: 'l02', title: 'Zero-shot y Few-shot', description: 'Diferencias, casos de uso y mejores prácticas para cada enfoque.', duration: '4 horas', type: 'workshop',
+            resources: [{ id: 'r02', type: 'exercise', title: 'Ejercicios de técnicas', downloadable: true }],
+            objectives: ['Diferenciar zero-shot y few-shot', 'Aplicar cada técnica correctamente', 'Optimizar resultados'],
+            keyPoints: ['Zero-shot', 'Few-shot', 'Ejemplos', 'Selección de técnica']
           }
         ]
       },
-      { id: 'm03', title: 'Prompting para Casos Específicos', description: 'Código, análisis de datos, creación de contenido, investigación.', duration: '12 horas',
+      { id: 'm03', title: 'Razonamiento Complejo', description: 'Tree-of-Thoughts y Self-Consistency. Técnicas avanzadas de razonamiento.', duration: '10 horas',
         lessons: [
-          { id: 'l03', title: 'Prompts para código', description: 'Generación, debugging, documentación, testing.', duration: '4 horas', type: 'practice',
-            resources: [{ id: 'r03', type: 'exercise', title: 'Prompts de código', downloadable: true }],
-            objectives: ['Generar código con IA', 'Depurar con prompts', 'Documentar automáticamente'],
-            keyPoints: ['Especificación clara', 'Ejemplos de entrada/salida', 'Iteración']
+          { id: 'l03', title: 'Chain-of-Thought avanzado', description: 'Tree-of-Thoughts, Self-Consistency y otras técnicas de razonamiento paso a paso.', duration: '5 horas', type: 'workshop',
+            resources: [{ id: 'r03', type: 'exercise', title: 'Ejercicios de razonamiento', downloadable: true }],
+            objectives: ['Implementar Chain-of-Thought', 'Usar Tree-of-Thoughts', 'Aplicar Self-Consistency'],
+            keyPoints: ['Chain-of-Thought', 'Tree-of-Thoughts', 'Self-Consistency', 'Razonamiento estructurado']
           }
         ]
       },
-      { id: 'm04', title: 'Frameworks y Bibliotecas', description: 'Creación de bibliotecas reutilizables, sistemas de prompts.', duration: '8 horas',
+      { id: 'm04', title: 'Prompting para Código y Datos', description: 'Estructuras JSON y SQL. Generación de código y análisis de datos con IA.', duration: '8 horas',
         lessons: [
-          { id: 'l04', title: 'Sistemas de prompts', description: 'Organización, versionado, testing de prompts.', duration: '4 horas', type: 'workshop',
-            resources: [{ id: 'r04', type: 'exercise', title: 'Plantilla de biblioteca', downloadable: true }],
-            objectives: ['Crear biblioteca de prompts', 'Versionar prompts', 'Testear eficacia'],
-            keyPoints: ['Organización', 'Versionado', 'Testing A/B']
+          { id: 'l04', title: 'IA para desarrolladores', description: 'Prompts para generar código, consultas SQL y estructuras JSON.', duration: '4 horas', type: 'practice',
+            resources: [{ id: 'r04', type: 'exercise', title: 'Ejercicios de código', downloadable: true }],
+            objectives: ['Generar código con IA', 'Crear consultas SQL', 'Diseñar estructuras JSON'],
+            keyPoints: ['Generación de código', 'SQL', 'JSON', 'Validación']
+          }
+        ]
+      },
+      { id: 'm05', title: 'Ingeniería de Sistemas', description: 'Variables, plantillas y metaprompts. Diseño de sistemas de prompts modulares.', duration: '6 horas',
+        lessons: [
+          { id: 'l05', title: 'Sistemas de prompts', description: 'Creación de plantillas reutilizables, variables y metaprompts para equipos.', duration: '3 horas', type: 'workshop',
+            resources: [{ id: 'r05', type: 'exercise', title: 'Plantillas de prompts', downloadable: true }],
+            objectives: ['Diseñar plantillas reutilizables', 'Implementar variables', 'Crear metaprompts'],
+            keyPoints: ['Plantillas', 'Variables', 'Metaprompts', 'Reutilización']
+          }
+        ]
+      },
+      { id: 'm06', title: 'Optimización', description: 'Métricas de éxito y A/B testing de prompts. Evaluación y mejora continua.', duration: '5 horas',
+        lessons: [
+          { id: 'l06', title: 'Métricas y testing', description: 'Cómo medir el éxito de prompts y realizar A/B testing para optimización.', duration: '2.5 horas', type: 'workshop',
+            resources: [{ id: 'r06', type: 'exercise', title: 'Ejercicios de optimización', downloadable: true }],
+            objectives: ['Definir métricas de éxito', 'Realizar A/B testing', 'Optimizar prompts iterativamente'],
+            keyPoints: ['Métricas', 'A/B testing', 'Optimización', 'Iteración']
           }
         ]
       }
     ],
-    additionalResources: [{ id: 'ar01', type: 'download', title: 'Biblioteca de 100+ prompts', downloadable: true }],
-    bibliography: ['Anthropic Prompt Engineering Guide', 'OpenAI Cookbook']
+    additionalResources: [{ id: 'ar01', type: 'download', title: 'Biblioteca de prompts profesionales', downloadable: true }],
+    bibliography: ['Anthropic Prompt Engineering Guide', 'OpenAI Cookbook', 'Prompt Engineering Best Practices']
   },
   {
-    productId: 'p19', productSlug: 'productividad-ia', productName: 'Productividad Profesional con IA',
-    introduction: 'Transforma tu productividad integrando IA en email, documentos, presentaciones, análisis y gestión de proyectos.',
-    methodology: 'Automatizaciones listas para implementar en tu trabajo diario.',
-    evaluationSystem: 'Implementación de 10 automatizaciones reales en tu entorno laboral.',
-    certification: 'Certificado CESAC AI Academy (50 horas).',
+    productId: 'p18', productSlug: 'estrategia-ia-empresarial', productName: 'Estrategia de IA Empresarial y Transformación Digital',
+    introduction: 'Enfoque directivo para líderes que deben decidir dónde, cómo y por qué invertir en IA. Se centra en el alineamiento estratégico, el cálculo del ROI, la gestión del cambio cultural y la identificación de "quick wins" frente a proyectos transformadores a largo plazo.',
+    methodology: 'Estudio de casos reales de empresas Fortune 500. Simulaciones de toma de decisiones directivas.',
+    evaluationSystem: 'Plan Estratégico de IA (60%). Defensa oral del plan ante panel de expertos (40%).',
+    certification: 'Certificado CESAC AI Academy (60 horas).',
     modules: [
-      { id: 'm01', title: 'IA para Email y Comunicación', description: 'Gestión de email, redacción, traducción, resumen de reuniones.', duration: '10 horas',
-        lessons: [{ id: 'l01', title: 'Email con IA', description: 'Automatización de respuestas, redacción profesional, resúmenes.', duration: '5 horas', type: 'practice',
-          resources: [{ id: 'r01', type: 'exercise', title: 'Automatizaciones de email', downloadable: true }],
-          objectives: ['Automatizar email', 'Redactar con IA', 'Resumir reuniones'],
-          keyPoints: ['Plantillas inteligentes', 'Respuestas automáticas', 'Resúmenes'] }]
+      { id: 'm01', title: 'Auditoría de Madurez Digital', description: 'Evaluación del estado actual de la organización en transformación digital.', duration: '10 horas',
+        lessons: [
+          { id: 'l01', title: 'Diagnóstico inicial', description: 'Metodología para evaluar madurez digital y preparar el terreno para IA.', duration: '5 horas', type: 'workshop',
+            resources: [{ id: 'r01', type: 'exercise', title: 'Cuestionario de madurez', downloadable: true }],
+            objectives: ['Evaluar madurez digital', 'Identificar gaps', 'Establecer línea base'],
+            keyPoints: ['Madurez digital', 'Gaps tecnológicos', 'Línea base']
+          }
+        ]
       },
-      { id: 'm02', title: 'Documentos y Presentaciones', description: 'Creación de documentos, informes, presentaciones con IA.', duration: '12 horas',
-        lessons: [{ id: 'l02', title: 'Documentos con IA', description: 'Generación de informes, presentaciones, propuestas.', duration: '6 horas', type: 'practice',
-          resources: [{ id: 'r02', type: 'exercise', title: 'Plantillas de documentos', downloadable: true }],
-          objectives: ['Crear documentos con IA', 'Generar presentaciones', 'Automatizar informes'],
-          keyPoints: ['Plantillas', 'Generación automática', 'Personalización'] }]
+      { id: 'm02', title: 'Identificación de Oportunidades', description: 'Matriz de impacto/esfuerzo para priorizar proyectos de IA.', duration: '10 horas',
+        lessons: [
+          { id: 'l02', title: 'Matriz de priorización', description: 'Herramientas para identificar y priorizar oportunidades de IA en la organización.', duration: '5 horas', type: 'workshop',
+            resources: [{ id: 'r02', type: 'exercise', title: 'Matriz impacto/esfuerzo', downloadable: true }],
+            objectives: ['Identificar oportunidades', 'Priorizar proyectos', 'Crear matriz de decisión'],
+            keyPoints: ['Impacto', 'Esfuerzo', 'Priorización', 'Quick wins']
+          }
+        ]
       },
-      { id: 'm03', title: 'Análisis de Datos', description: 'Excel, hojas de cálculo, análisis con IA, visualización.', duration: '12 horas',
-        lessons: [{ id: 'l03', title: 'Datos con IA', description: 'Análisis, limpieza, visualización con IA.', duration: '6 horas', type: 'practice',
-          resources: [{ id: 'r03', type: 'exercise', title: 'Ejercicios de análisis', downloadable: true }],
-          objectives: ['Analizar datos con IA', 'Limpiar datos', 'Visualizar resultados'],
-          keyPoints: ['Fórmulas IA', 'Limpieza automática', 'Gráficos'] }]
+      { id: 'm03', title: 'Modelos de Negocio potenciados por IA', description: 'Cómo la IA transforma modelos de negocio existentes y crea nuevos.', duration: '12 horas',
+        lessons: [
+          { id: 'l03', title: 'Transformación de modelos', description: 'Análisis de modelos de negocio disruptivos habilitados por IA.', duration: '6 horas', type: 'theory',
+            resources: [{ id: 'r03', type: 'pdf', title: 'Casos de estudio Fortune 500', pages: 30, downloadable: true }],
+            objectives: ['Analizar modelos transformados', 'Identificar oportunidades', 'Diseñar nuevos modelos'],
+            keyPoints: ['Modelos disruptivos', 'Casos reales', 'Oportunidades']
+          }
+        ]
       },
-      { id: 'm04', title: 'Gestión de Proyectos', description: 'Planificación, seguimiento, reporting con IA.', duration: '10 horas',
-        lessons: [{ id: 'l04', title: 'Proyectos con IA', description: 'Automatización de gestión de proyectos.', duration: '5 horas', type: 'practice',
-          resources: [{ id: 'r04', type: 'exercise', title: 'Plantillas de gestión', downloadable: true }],
-          objectives: ['Planificar con IA', 'Automatizar seguimiento', 'Generar reportes'],
-          keyPoints: ['Planificación automática', 'Seguimiento', 'Reportes'] }]
+      { id: 'm04', title: 'Gestión de Talento', description: 'Upskilling y reskilling para la era de la IA.', duration: '8 horas',
+        lessons: [
+          { id: 'l04', title: 'Desarrollo de talento', description: 'Estrategias para upskilling y reskilling de equipos en competencias de IA.', duration: '4 horas', type: 'workshop',
+            resources: [{ id: 'r04', type: 'exercise', title: 'Plan de desarrollo', downloadable: true }],
+            objectives: ['Diseñar planes de upskilling', 'Implementar reskilling', 'Gestionar cambio cultural'],
+            keyPoints: ['Upskilling', 'Reskilling', 'Cambio cultural']
+          }
+        ]
+      },
+      { id: 'm05', title: 'Presupuesto y Financiación', description: 'CAPEX vs. OPEX en proyectos de IA. Modelos de financiación.', duration: '10 horas',
+        lessons: [
+          { id: 'l05', title: 'Financiación de IA', description: 'Análisis de costes, ROI y modelos de financiación para proyectos de IA.', duration: '5 horas', type: 'theory',
+            resources: [{ id: 'r05', type: 'exercise', title: 'Calculadora de ROI', downloadable: true }],
+            objectives: ['Calcular ROI', 'Diferenciar CAPEX/OPEX', 'Diseñar modelos de financiación'],
+            keyPoints: ['CAPEX', 'OPEX', 'ROI', 'Financiación']
+          }
+        ]
+      },
+      { id: 'm06', title: 'KPIs Estratégicos y gobierno de datos', description: 'Métricas de éxito y gobernanza de datos para IA empresarial.', duration: '10 horas',
+        lessons: [
+          { id: 'l06', title: 'Métricas y gobernanza', description: 'Definición de KPIs estratégicos y establecimiento de gobierno de datos.', duration: '5 horas', type: 'workshop',
+            resources: [{ id: 'r06', type: 'exercise', title: 'Dashboard de KPIs', downloadable: true }],
+            objectives: ['Definir KPIs estratégicos', 'Establecer gobierno de datos', 'Medir éxito de IA'],
+            keyPoints: ['KPIs', 'Gobernanza', 'Métricas', 'Éxito']
+          }
+        ]
       }
     ],
-    additionalResources: [{ id: 'ar01', type: 'download', title: 'Kit de productividad con IA', downloadable: true }],
-    bibliography: []
+    additionalResources: [{ id: 'ar01', type: 'download', title: 'Plantilla de Plan Estratégico de IA', downloadable: true }],
+    bibliography: ['Casos de estudio Fortune 500', 'McKinsey: The State of AI', 'Gartner: AI Strategy Guide']
   },
   {
-    productId: 'p20', productSlug: 'investigacion-ia', productName: 'Investigación Asistida por IA',
-    introduction: 'Metodología de investigación potenciada con IA: búsqueda avanzada, análisis de fuentes, síntesis y redacción académica.',
-    methodology: 'Proyecto de investigación real con apoyo de IA.',
-    evaluationSystem: 'Revisión bibliográfica asistida por IA.',
+    productId: 'p19', productSlug: 'etica-gobernanza-ia', productName: 'Ética, Gobernanza y Regulación de IA (EU AI Act)',
+    introduction: 'Curso especializado en el marco legal y ético de la IA en 2026, con foco total en la aplicación práctica del EU AI Act y normativas globales emergentes. Ideal para oficiales de cumplimiento, legales y responsables de protección de datos.',
+    methodology: 'Análisis de sentencias judiciales recientes y auditorías simuladas sobre datasets públicos.',
+    evaluationSystem: 'Informe de clasificación de riesgo de un sistema (50%). Manual de políticas de uso interno (50%).',
+    certification: 'Certificado CESAC AI Academy (40 horas).',
+    modules: [
+      { id: 'm01', title: 'Marco Legal Global', description: 'EU AI Act, leyes locales y estándares ISO. Panorama regulatorio completo.', duration: '8 horas',
+        lessons: [
+          { id: 'l01', title: 'Regulación global de IA', description: 'Análisis del EU AI Act, normativas locales y estándares internacionales.', duration: '4 horas', type: 'theory',
+            resources: [{ id: 'r01', type: 'pdf', title: 'EU AI Act completo', pages: 50, downloadable: true }],
+            objectives: ['Conocer EU AI Act', 'Entender normativas locales', 'Aplicar estándares ISO'],
+            keyPoints: ['EU AI Act', 'Normativas locales', 'Estándares ISO', 'Cumplimiento']
+          }
+        ]
+      },
+      { id: 'm02', title: 'Clasificación de Riesgo', description: 'Prohibidas, alto riesgo, limitado y mínimo. Metodología de clasificación.', duration: '8 horas',
+        lessons: [
+          { id: 'l02', title: 'Niveles de riesgo', description: 'Clasificación de sistemas de IA según niveles de riesgo del EU AI Act.', duration: '4 horas', type: 'workshop',
+            resources: [{ id: 'r02', type: 'exercise', title: 'Ejercicios de clasificación', downloadable: true }],
+            objectives: ['Clasificar sistemas por riesgo', 'Aplicar metodología', 'Documentar decisiones'],
+            keyPoints: ['Prohibidas', 'Alto riesgo', 'Limitado', 'Mínimo']
+          }
+        ]
+      },
+      { id: 'm03', title: 'Transparencia Algorítmica', description: 'Derecho a la explicación y protocolos de transparencia (XAI).', duration: '8 horas',
+        lessons: [
+          { id: 'l03', title: 'Explicabilidad (XAI)', description: 'Implementación de protocolos de transparencia y derecho a la explicación.', duration: '4 horas', type: 'theory',
+            resources: [{ id: 'r03', type: 'pdf', title: 'Guía XAI', pages: 25, downloadable: true }],
+            objectives: ['Implementar XAI', 'Garantizar transparencia', 'Cumplir derecho a explicación'],
+            keyPoints: ['XAI', 'Transparencia', 'Derecho a explicación', 'Protocolos']
+          }
+        ]
+      },
+      { id: 'm04', title: 'Privacidad y Datos', description: 'Anonimización y federated learning. Protección de datos en IA.', duration: '6 horas',
+        lessons: [
+          { id: 'l04', title: 'Privacidad en IA', description: 'Técnicas de anonimización, federated learning y cumplimiento GDPR.', duration: '3 horas', type: 'theory',
+            resources: [{ id: 'r04', type: 'exercise', title: 'Ejercicios de privacidad', downloadable: true }],
+            objectives: ['Aplicar anonimización', 'Implementar federated learning', 'Cumplir GDPR'],
+            keyPoints: ['Anonimización', 'Federated learning', 'GDPR', 'Privacidad']
+          }
+        ]
+      },
+      { id: 'm05', title: 'Auditoría Ética', description: 'Detección de sesgos y auditoría de algoritmos. Metodología completa.', duration: '6 horas',
+        lessons: [
+          { id: 'l05', title: 'Auditoría de sesgos', description: 'Metodología para auditar algoritmos y detectar sesgos discriminatorios.', duration: '3 horas', type: 'workshop',
+            resources: [{ id: 'r05', type: 'exercise', title: 'Auditoría simulada', downloadable: true }],
+            objectives: ['Auditar algoritmos', 'Detectar sesgos', 'Documentar hallazgos'],
+            keyPoints: ['Auditoría', 'Sesgos', 'Discriminación', 'Documentación']
+          }
+        ]
+      },
+      { id: 'm06', title: 'Gobernanza Corporativa', description: 'Responsabilidades legales y estructura de gobernanza de IA.', duration: '4 horas',
+        lessons: [
+          { id: 'l06', title: 'Gobernanza de IA', description: 'Diseño de estructura de gobernanza y asignación de responsabilidades legales.', duration: '2 horas', type: 'theory',
+            resources: [{ id: 'r06', type: 'pdf', title: 'Manual de gobernanza', pages: 20, downloadable: true }],
+            objectives: ['Diseñar gobernanza', 'Asignar responsabilidades', 'Cumplir legalmente'],
+            keyPoints: ['Gobernanza', 'Responsabilidades', 'Legal', 'Estructura']
+          }
+        ]
+      }
+    ],
+    additionalResources: [{ id: 'ar01', type: 'download', title: 'Manual de cumplimiento EU AI Act', downloadable: true }],
+    bibliography: ['EU AI Act', 'ISO/IEC 42001', 'GDPR Guidelines for AI', 'Ethics Guidelines for Trustworthy AI']
+  },
+  {
+    productId: 'p20', productSlug: 'ia-toma-decisiones', productName: 'IA para la Toma de Decisiones Estratégicas',
+    introduction: 'Combina analítica de datos avanzada con modelos predictivos para apoyar la dirección estratégica. Los alumnos aprenderán a interpretar escenarios simulados por IA, reducir la incertidumbre en mercados volátiles y evitar sesgos cognitivos humanos mediante el apoyo de inteligencia artificial.',
+    methodology: 'Uso de herramientas de simulación de negocios y análisis de grandes volúmenes de datos históricos.',
+    evaluationSystem: 'Modelo predictivo aplicado a caso de estudio (60%). Presentación ejecutiva de resultados (40%).',
     certification: 'Certificado CESAC AI Academy (45 horas).',
     modules: [
-      { id: 'm01', title: 'Búsqueda Avanzada', description: 'Estrategias de búsqueda, bases de datos, IA para descubrimiento.', duration: '10 horas',
-        lessons: [{ id: 'l01', title: 'Búsqueda con IA', description: 'Herramientas de búsqueda asistida por IA.', duration: '5 horas', type: 'practice',
-          resources: [{ id: 'r01', type: 'exercise', title: 'Ejercicios de búsqueda', downloadable: true }],
-          objectives: ['Buscar eficientemente', 'Usar IA para descubrimiento', 'Evaluar fuentes'],
-          keyPoints: ['Búsqueda semántica', 'Filtros avanzados', 'Evaluación de fuentes'] }]
+      { id: 'm01', title: 'De BI a IA Predictiva', description: 'Evolución del Business Intelligence hacia la IA predictiva.', duration: '8 horas',
+        lessons: [
+          { id: 'l01', title: 'BI vs IA Predictiva', description: 'Diferencias entre Business Intelligence tradicional y IA predictiva.', duration: '4 horas', type: 'theory',
+            resources: [{ id: 'r01', type: 'video', title: 'De BI a IA', duration: '60 min', downloadable: false }],
+            objectives: ['Diferenciar BI de IA predictiva', 'Entender evolución', 'Identificar casos de uso'],
+            keyPoints: ['BI tradicional', 'IA predictiva', 'Evolución', 'Casos de uso']
+          }
+        ]
       },
-      { id: 'm02', title: 'Análisis de Fuentes', description: 'Lectura crítica, extracción de información, detección de sesgos.', duration: '12 horas',
-        lessons: [{ id: 'l02', title: 'Análisis con IA', description: 'Uso de IA para analizar papers y documentos.', duration: '6 horas', type: 'practice',
-          resources: [{ id: 'r02', type: 'exercise', title: 'Análisis de papers', downloadable: true }],
-          objectives: ['Analizar con IA', 'Detectar sesgos', 'Extraer información clave'],
-          keyPoints: ['Resumen automático', 'Detección de sesgos', 'Extracción de datos'] }]
+      { id: 'm02', title: 'Modelos de Forecasting', description: 'Series temporales y variables externas. Predicción de mercado.', duration: '8 horas',
+        lessons: [
+          { id: 'l02', title: 'Forecasting con IA', description: 'Modelos de series temporales y análisis de variables externas para predicción.', duration: '4 horas', type: 'practice',
+            resources: [{ id: 'r02', type: 'exercise', title: 'Ejercicios de forecasting', downloadable: true }],
+            objectives: ['Construir modelos de forecasting', 'Analizar series temporales', 'Incorporar variables externas'],
+            keyPoints: ['Series temporales', 'Variables externas', 'Forecasting', 'Predicción']
+          }
+        ]
       },
-      { id: 'm03', title: 'Síntesis y Redacción', description: 'Síntesis de literatura, redacción académica, citación.', duration: '12 horas',
-        lessons: [{ id: 'l03', title: 'Redacción con IA', description: 'Asistencia en redacción manteniendo rigor.', duration: '6 horas', type: 'practice',
-          resources: [{ id: 'r03', type: 'exercise', title: 'Ejercicios de redacción', downloadable: true }],
-          objectives: ['Sintetizar con IA', 'Redactar con asistencia', 'Citar correctamente'],
-          keyPoints: ['Síntesis', 'Parafraseo', 'Citación'] }]
+      { id: 'm03', title: 'Simulación de Escenarios', description: 'Herramientas de Monte Carlo con IA. Análisis What-if.', duration: '10 horas',
+        lessons: [
+          { id: 'l03', title: 'Simulación Monte Carlo', description: 'Uso de simulación de Monte Carlo con IA para análisis de escenarios.', duration: '5 horas', type: 'practice',
+            resources: [{ id: 'r03', type: 'exercise', title: 'Simulaciones', downloadable: true }],
+            objectives: ['Implementar Monte Carlo', 'Analizar escenarios What-if', 'Interpretar resultados'],
+            keyPoints: ['Monte Carlo', 'What-if', 'Escenarios', 'Simulación']
+          }
+        ]
+      },
+      { id: 'm04', title: 'Sesgos Cognitivos vs. Algorítmicos', description: 'Diferenciar y mitigar sesgos humanos y de IA en decisiones.', duration: '7 horas',
+        lessons: [
+          { id: 'l04', title: 'Sesgos en decisiones', description: 'Identificación y mitigación de sesgos cognitivos humanos y algorítmicos.', duration: '3.5 horas', type: 'theory',
+            resources: [{ id: 'r04', type: 'pdf', title: 'Guía de sesgos', pages: 20, downloadable: true }],
+            objectives: ['Identificar sesgos cognitivos', 'Detectar sesgos algorítmicos', 'Mitigar ambos tipos'],
+            keyPoints: ['Sesgos cognitivos', 'Sesgos algorítmicos', 'Mitigación', 'Decisiones']
+          }
+        ]
+      },
+      { id: 'm05', title: 'Visualización Narrativa', description: 'Presentación efectiva de datos predictivos con storytelling.', duration: '6 horas',
+        lessons: [
+          { id: 'l05', title: 'Data storytelling', description: 'Técnicas de visualización narrativa para presentar datos predictivos.', duration: '3 horas', type: 'practice',
+            resources: [{ id: 'r05', type: 'exercise', title: 'Ejercicios de visualización', downloadable: true }],
+            objectives: ['Crear visualizaciones efectivas', 'Narrar con datos', 'Presentar insights'],
+            keyPoints: ['Visualización', 'Narrativa', 'Storytelling', 'Insights']
+          }
+        ]
+      },
+      { id: 'm06', title: 'Casos de Estudio', description: 'Aplicaciones en Finanzas, Retail y Logística. Proyectos reales.', duration: '6 horas',
+        lessons: [
+          { id: 'l06', title: 'Casos sectoriales', description: 'Análisis de casos reales de IA para toma de decisiones en diferentes sectores.', duration: '3 horas', type: 'practice',
+            resources: [{ id: 'r06', type: 'pdf', title: 'Casos de estudio', pages: 25, downloadable: true }],
+            objectives: ['Analizar casos reales', 'Aplicar a tu sector', 'Extraer lecciones'],
+            keyPoints: ['Finanzas', 'Retail', 'Logística', 'Casos reales']
+          }
+        ]
       }
     ],
-    additionalResources: [{ id: 'ar01', type: 'download', title: 'Guía de investigación con IA', downloadable: true }],
-    bibliography: []
+    additionalResources: [{ id: 'ar01', type: 'download', title: 'Herramientas de simulación de negocios', downloadable: true }],
+    bibliography: ['Predictive Analytics for Business', 'Data Science for Business', 'Case Studies in AI Decision Making']
   },
   {
     productId: 'p21', productSlug: 'automatizacion-ia', productName: 'Automatización con IA',

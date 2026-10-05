@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { products } from '@/lib/data';
 import { CourseHeader, CourseMetaGrid, CourseSidebar, ModuleList, TargetAudienceTags, FAQAccordion } from '@/components/course';
-import { CheckCircle, Target, GraduationCap, ChevronRight } from 'lucide-react';
+import { CheckCircle, Target, GraduationCap, ChevronRight, BookOpen } from 'lucide-react';
 
 export async function generateStaticParams() {
   return products.map((product) => ({
@@ -103,6 +103,31 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
 
             {/* FAQ - Acordeón */}
             <FAQAccordion faqs={product.faqs} />
+
+            {/* Enlace al contenido completo */}
+            <div className="mt-12 bg-gradient-to-r from-cesac-50 to-blue-50 rounded-xl border-2 border-cesac-200 p-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-lg bg-cesac-600 flex items-center justify-center shrink-0">
+                  <BookOpen className="w-6 h-6 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-cesac-900 mb-2">
+                    ¿Quieres ver el contenido completo del programa?
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-4">
+                    Accede al programa detallado con módulos, lecciones, recursos descargables, evaluaciones y bibliografía completa.
+                  </p>
+                  <Link
+                    href={`/formacion/${product.slug}/contenido`}
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-cesac-700 text-white font-semibold rounded-lg hover:bg-cesac-800 transition"
+                  >
+                    <BookOpen className="w-5 h-5" />
+                    Ver contenido completo del programa
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Columna derecha - Sidebar sticky */}

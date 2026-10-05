@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Users, Building2, GraduationCap, Shield, Cpu, BookOpen, Briefcase, Landmark, FlaskConical, Scale, ClipboardList, Star, TrendingUp, Award, Zap } from 'lucide-react';
+import { ArrowRight, CheckCircle, Users, Building2, GraduationCap, Shield, Cpu, BookOpen, Briefcase, Landmark, FlaskConical, Scale, ClipboardList, Star, TrendingUp, Award, Zap, Crown, Factory, Calculator, DollarSign } from 'lucide-react';
 import { businessUnits, products } from '../lib/data';
 
 export default function Home() {
@@ -267,6 +267,127 @@ export default function Home() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Franquicias */}
+      <section className="py-16 md:py-20 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-medium mb-4">
+              <Crown className="w-4 h-4" /> Programa de Partners
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-cesac-900 mb-4">Conviértete en Franquicia CESAC AI</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Accede a todo el catálogo de 40 productos, tutor IA, campus virtual y soporte dedicado. Opera en tu zona con el respaldo de una marca líder.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {[
+              { tier: 'BASIC', price: '500', users: '5', commission: '85%', color: 'from-gray-500 to-gray-700' },
+              { tier: 'STANDARD', price: '1.500', users: '15', commission: '88%', color: 'from-blue-500 to-blue-700' },
+              { tier: 'PREMIUM', price: '3.500', users: '50', commission: '90%', color: 'from-violet-500 to-violet-700', popular: true },
+              { tier: 'ENTERPRISE', price: '8.000', users: '∞', commission: '92%', color: 'from-amber-500 to-amber-700' }
+            ].map((plan, i) => (
+              <div key={i} className={`bg-white rounded-xl border-2 ${plan.popular ? 'border-cesac-600 shadow-xl' : 'border-gray-200'} overflow-hidden`}>
+                {plan.popular && (
+                  <div className="bg-cesac-600 text-white text-xs font-bold px-3 py-1 text-center">
+                    MÁS POPULAR
+                  </div>
+                )}
+                <div className={`bg-gradient-to-r ${plan.color} p-4 text-white`}>
+                  <h3 className="text-xl font-bold">{plan.tier}</h3>
+                  <div className="flex items-baseline gap-1 mt-2">
+                    <span className="text-3xl font-bold">€{plan.price}</span>
+                    <span className="text-sm opacity-80">/mes</span>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-gray-500">Usuarios:</span>
+                      <span className="font-medium">{plan.users}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-500">Comisión:</span>
+                      <span className="font-medium text-success-500">{plan.commission}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link to="/franquicias" className="inline-flex items-center gap-2 px-6 py-3 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-700 transition">
+              <Crown className="w-5 h-5" />
+              Conocer programa de franquicias
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Módulo de Producción */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-4">
+              <Factory className="w-4 h-4" /> Análisis de Producción
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-cesac-900 mb-4">Coste Real de la Plataforma IA</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Calcula el ROI y el coste real de implementar la plataforma IA en tu empresa. Desde PYMEs hasta gigafactorías con 10,000+ empleados.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-200">
+              <Calculator className="w-10 h-10 text-emerald-600 mb-4" />
+              <h3 className="text-xl font-bold text-cesac-900 mb-2">Calculadora Interactiva</h3>
+              <p className="text-sm text-gray-600 mb-4">Configura tu escenario y obtén proyecciones personalizadas de costes y ROI en tiempo real.</p>
+              <Link to="/produccion/calculadora" className="text-emerald-700 font-medium text-sm hover:underline flex items-center gap-1">
+                Abrir calculadora <ArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200">
+              <TrendingUp className="w-10 h-10 text-blue-600 mb-4" />
+              <h3 className="text-xl font-bold text-cesac-900 mb-2">5 Escenarios Predefinidos</h3>
+              <p className="text-sm text-gray-600 mb-4">Análisis completo para Startup, PYME, Empresa Mediana, Gran Empresa y Gigafactoría.</p>
+              <Link to="/produccion/escenarios" className="text-blue-700 font-medium text-sm hover:underline flex items-center gap-1">
+                Ver escenarios <ArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
+            <div className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-xl p-6 border border-violet-200">
+              <Factory className="w-10 h-10 text-violet-600 mb-4" />
+              <h3 className="text-xl font-bold text-cesac-900 mb-2">Caso Gigafactoría</h3>
+              <p className="text-sm text-gray-600 mb-4">Análisis detallado para 10,000+ empleados con ahorro de €7.6M/año y ROI del 186%.</p>
+              <Link to="/produccion/gigafactoria" className="text-violet-700 font-medium text-sm hover:underline flex items-center gap-1">
+                Ver caso completo <ArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
+          </div>
+          <div className="bg-gradient-to-r from-cesac-700 to-cesac-900 rounded-2xl p-8 text-white">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div>
+                <div className="text-3xl font-bold mb-1">780%</div>
+                <div className="text-sm text-blue-200">ROI máximo</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-1">0.6m</div>
+                <div className="text-sm text-blue-200">Payback más rápido</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-1">€7.6M</div>
+                <div className="text-sm text-blue-200">Ahorro anual (Gigafactoría)</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-1">81%</div>
+                <div className="text-sm text-blue-200">Reducción vs. tradicional</div>
+              </div>
+            </div>
+          </div>
+          <div className="text-center mt-8">
+            <Link to="/produccion" className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition">
+              <Calculator className="w-5 h-5" />
+              Explorar módulo de producción
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>

@@ -11,7 +11,6 @@ import { About, Contact, UnitPage, Subscriptions, Cart, LegalPage } from './page
 import FranchisePage from './pages/Franchise';
 import ProductionPage from './pages/Production';
 import PremiumPage from './pages/Premium';
-import Franquicias from './pages/Franquicias';
 
 function App() {
   return (
@@ -41,7 +40,7 @@ function App() {
             <Route path="/ai-tutor" element={<AITutor />} />
             <Route path="/suscripciones" element={<Subscriptions />} />
             <Route path="/carrito" element={<Cart />} />
-            <Route path="/franquicias" element={<Franquicias />} />
+            <Route path="/franquicias" element={<FranchisePage />} />
             <Route path="/produccion" element={<ProductionPage />} />
             <Route path="/premium" element={<PremiumPage />} />
             <Route path="/sobre" element={<About />} />

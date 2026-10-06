@@ -1,0 +1,23 @@
+{
+  "name": "cesac-ai",
+  "build": {
+    "command": "npm run build",
+    "output": "dist"
+  },
+  "routes": {
+    "/*": {
+      "status": 200,
+      "path": "/index.html"
+    }
+  },
+  "headers": {
+    "/assets/*": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "/*": {
+      "X-Content-Type-Options": "nosniff",
+      "X-Frame-Options": "DENY",
+      "X-XSS-Protection": "1; mode=block"
+    }
+  }
+}
